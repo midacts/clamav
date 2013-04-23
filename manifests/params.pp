@@ -44,22 +44,26 @@ class clamav::params {
   # Case to hand out variables based on the operating system
   case $::operatingsystem {
     centos, opensuse:   {
-      $clamav_package	= "clamd"
-      $clamd_file       = "/etc/clamd.conf"
-      $databasedir      = "/var/clamav"
+      $clamav_package	= 'clamd'
+      $clamd_file       = '/etc/clamd.conf'
+      $databasedir      = '/var/clamav'
       $daily_origin	= '/var/clamav/daily.cvd'
       $main_origin	= '/var/clamav/main.cvd'
-      $freshclam_file 	= "/etc/freshclam.conf"
-      $freshclam_srv	= "clamav-freshclam"
+      $freshclam_file 	= '/etc/freshclam.conf'
+      $freshclam_srv	= 'clamav-freshclam'
+      $user		= 'clam'
+      $group		= 'clam'
     }
     debian, ubuntu:     {
-      $clamav_package	= "clamav"
-      $clamd_file       = "/etc/clamav/clamd.conf"
-      $databasedir	= "/var/lib/clamav"
+      $clamav_package	= 'clamav'
+      $clamd_file       = '/etc/clamav/clamd.conf'
+      $databasedir	= '/var/lib/clamav'
       $daily_origin     = '/var/lib/clamav/daily.cvd'
       $main_origin      = '/var/lib/clamav/main.cvd'
-      $freshclam_file 	= "/etc/clamav/freshclam.conf"
-      $freshclam_srv	= "clamav-freshclam"
+      $freshclam_file 	= '/etc/clamav/freshclam.conf'
+      $freshclam_srv	= 'clamav-freshclam'
+      $user		= 'clamav'
+      $group		= 'clamav'
     }
   }
 }

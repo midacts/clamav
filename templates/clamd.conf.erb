@@ -43,7 +43,7 @@ HeuristicScanPrecedence false
 IdleTimeout 30
 LeaveTemporaryFiles false
 LocalSocket /var/run/clamav/clamd.ctl
-LocalSocketGroup clamav
+LocalSocketGroup <%= scope.lookupvar('clamav::params::group') %>
 LocalSocketMode 666
 LogClean false
 LogFacility LOG_LOCAL6
@@ -76,4 +76,5 @@ SelfCheck 3600
 SendBufTimeout 200
 StreamMaxLength 25M
 StructuredDataDetection false
-User clamav
+User <%= scope.lookupvar('clamav::params::user') %>
+

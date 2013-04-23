@@ -28,8 +28,8 @@ class clamav::database {
     source    	=> 'puppet:///modules/clamav/main.cvd',
     backup	=> false,
     mode      	=> 644,
-    owner     	=> clamav,
-    group     	=> clamav,
+    owner     	=> "${clamav::params::user}",
+    group     	=> "${clamav::params::group}",
     require   	=> Package["${clamav::params::clamav_package}"],
   }
 
@@ -40,8 +40,8 @@ class clamav::database {
     source    	=> 'puppet:///modules/clamav/daily.cvd',
     backup	=> false,
     mode      	=> 644,
-    owner     	=> clamav,
-    group     	=> clamav,
+    owner       => "${clamav::params::user}",
+    group       => "${clamav::params::group}",
     require   	=> Package["${clamav::params::clamav_package}"],
   }
 }

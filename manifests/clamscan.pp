@@ -22,8 +22,8 @@ class clamav::clamscan {
   file { "${clamav::params::clamscan_log}":
     ensure      => present,
     mode        => "644",
-    owner       => "clamav",
-    group       => "clamav",
+    owner       => "${clamav::params::user}",
+    group       => "${clamav::params::group}",
     require     => Cron ['clamscan'],
   }
 
@@ -31,7 +31,7 @@ class clamav::clamscan {
   cron { 'clamscan':
     ensure      => present,
     command     => "/usr/bin/clamscan -r / -l '${clamav::params::clamscan_log}'",
-    user        => clamav,
+    user        => "${clamav::params::user}",
     hour        => "${clamav::params::hour}",
     minute      => "${clamav::params::minute}",
     require     => Package ["${clamav::params::clamav_package}"],

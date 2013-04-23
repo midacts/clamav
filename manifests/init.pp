@@ -28,18 +28,18 @@ class clamav {
   file { "${clamav::params::clamd_file}":
     ensure      => present,
     content     => template('clamav/clamd.conf.erb'),
-    mode        => "644",
-    owner       => "root",
-    group       => "clamav",
+    mode        => '644',
+    owner       => "${clamav::params::user}",
+    group       => "${clamav::params::group}",
     require     => Package["${clamav::params::clamav_package}"],
   }
 
   # Copies the freshclam.conf file to each noe
   file { "${clamav::params::freshclam_file}":
     ensure      => present,
-    content     => template("clamav/freshclam.conf.erb"),
-    mode        => "644",
-    owner       => "root",
+    content     => template('clamav/freshclam.conf.erb'),
+    owner       => "${clamav::params::user}",
+    group       => "${clamav::params::group}",
     require     => Package["${clamav::params::clamav_package}"],
   }
 

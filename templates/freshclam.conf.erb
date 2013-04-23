@@ -30,7 +30,7 @@ ConnectTimeout 30
 DatabaseDirectory <%= scope.lookupvar('clamav::params::databasedir') %>
 DatabaseMirror database.clamav.net
 DatabaseMirror clamav.theshell.com
-DatabaseOwner clamav
+DatabaseOwner <%= scope.lookupvar('clamav::params::user') %>
 Debug false
 DNSDatabaseInfo current.cvd.clamav.net
 Foreground false
