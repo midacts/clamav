@@ -1,0 +1,79 @@
+# Name
+# -----
+# clamd.conf
+#
+# This file is managed by the Puppet Master
+#
+# Synopsis
+# ---------
+# This is the main ClamAV daemon config
+#
+# Class
+# ------
+# clamav
+#
+# Resource
+# ---------
+# File["/etc/clamav/clamd.conf"]
+#
+# Author
+# -------
+# John McCarthy <jmccarthy@orthobanc.com>
+#
+#
+AlgorithmicDetection true
+AllowSupplementaryGroups true
+ArchiveBlockEncrypted false
+Bytecode true
+BytecodeSecurity TrustSigned
+BytecodeTimeout 60000
+CommandReadTimeout 5
+CrossFilesystems true
+DatabaseDirectory <%= scope.lookupvar('clamav::params::databasedir') %>
+Debug false
+DetectBrokenExecutables false
+DetectPUA false
+ExitOnOOM false
+ExtendedDetectionInfo true
+FixStaleSocket true
+FollowDirectorySymlinks false
+FollowFileSymlinks false
+Foreground false
+HeuristicScanPrecedence false
+IdleTimeout 30
+LeaveTemporaryFiles false
+LocalSocket /var/run/clamav/clamd.ctl
+LocalSocketGroup clamav
+LocalSocketMode 666
+LogClean false
+LogFacility LOG_LOCAL6
+LogFile <%= scope.lookupvar('clamav::params::clamscan_log') %>
+LogFileMaxSize 0
+LogFileUnlock false
+LogSyslog false
+LogTime true
+LogVerbose false
+MaxConnectionQueueLength 15
+MaxDirectoryRecursion 15
+MaxQueue 100
+MaxThreads 12
+OfficialDatabaseOnly false
+OLE2BlockMacros false
+PhishingAlwaysBlockCloak false
+PhishingAlwaysBlockSSLMismatch false
+PhishingScanURLs true
+PhishingSignatures true
+PidFile /var/run/clamav/clamd.pid
+ReadTimeout 180
+ScanArchive true
+ScanELF true
+ScanHTML true
+ScanMail true
+ScanOLE2 true
+ScanPartialMessages false
+ScanPE true
+SelfCheck 3600
+SendBufTimeout 200
+StreamMaxLength 25M
+StructuredDataDetection false
+User clamav

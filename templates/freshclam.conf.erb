@@ -1,0 +1,47 @@
+# Name
+# -----
+# freshclam.conf
+#
+# This file is managed by the Puppet Master
+#
+# Synopsis
+# ---------
+# This is the config for the daemon that keeps ClamAV virus
+# definitions up to date.
+#
+# Class
+# ------
+# clamav::freshclam
+#
+# Resource
+# ---------
+# File["/etc/clamav/freshclam.conf", "/etc/freshclam.conf"]
+#
+# Author
+# --------
+# John McCarthy <jmccarthy@orthobanc.com>
+#
+#
+AllowSupplementaryGroups false
+Bytecode true
+Checks 24
+CompressLocalDatabase no
+ConnectTimeout 30
+DatabaseDirectory <%= scope.lookupvar('clamav::params::databasedir') %>
+DatabaseMirror database.clamav.net
+DatabaseMirror clamav.theshell.com
+DatabaseOwner clamav
+Debug false
+DNSDatabaseInfo current.cvd.clamav.net
+Foreground false
+LogFacility LOG_LOCAL6
+LogFileMaxSize 0
+LogSyslog false
+LogTime true
+LogVerbose false
+MaxAttempts 5
+PidFile /var/run/clamav/freshclam.pid
+ReceiveTimeout 30
+ScriptedUpdates no
+TestDatabases yes
+UpdateLogFile /var/log/clamav/freshclam.log

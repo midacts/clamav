@@ -1,0 +1,2 @@
+This directory stores the latest clamav database cvd files for each Puppet agent to pull
+the latest database version from the Puppet Master.
