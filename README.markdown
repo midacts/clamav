@@ -110,7 +110,7 @@ parameters
 This template sets the default ssmtp.conf file answers on every server. It specifically generates te following 
 parameters
 
-* **mailhub=172.16.3.30** which is obmail.100.orthobanc.local
+* **mailhub=<%= clamav::params::mailserver %>** 
 * **hostname=<%= hostname %>** to automatically generate a the unique server hostname for every server's ssmtp.conf
 
 ##`clamscan.sh.erb`
@@ -118,6 +118,6 @@ This file was found on 'Devon Hillard's Digital Sanctuary' which can be found at
 <http://www.digitalsanctuary.com/tech-blog/debian/automated-clamav-virus-scanning.html>
 
 I used his code that he made to be used for daily clamscan runs. This script runs clamscan and searches the log file for
-infected files. It then will email the supplied email addresses of any found infected files. I made this file    template
+infected files. It then will email the supplied email addresses of any found infected files. I made this file template
 so that i could auto generate the 'fqdn' for the SUBJECT variable. I also used my 'clamscan_log' variable for the LOG 
-variable. I also added in my email addess in the EMAIL variable and changed 'clamscan' to scan '-r /'.
+variable. The EMAIL variable is set by the clamav::params::email variable. Lastly, I changed 'clamscan' to scan '-r /'.
