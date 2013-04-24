@@ -1,15 +1,15 @@
 #!/bin/bash
- 
+
 # email subject
-SUBJECT="VIRUS DETECTED ON `hostname`!!!"
+SUBJECT="VIRUS DETECTED ON '<%= fqdn %>'!!!"
 # Email To ?
 EMAIL="jmccarthy@orthobanc.com"
 # Log location
 LOG=<%= scope.lookupvar('clamav::params::clamscan_log') %>
- 
+
 check_scan () {
- 
-  # Check the last set of results. If there are any "Infected" counts that aren't zero, we have a problem.
+
+  # Checks the last set of results for any "Infected" file counts.
   if [ `tail -n 12 ${LOG}  | grep Infected | grep -v 0 | wc -l` != 0 ]
   then
     EMAILMESSAGE=`mktemp /tmp/virus-alert.XXXXX`
@@ -22,7 +22,7 @@ check_scan () {
     sendmail -t < ${EMAILMESSAGE}
   fi
 }
- 
-clamscan -r / --exclude-dir=/sys/ --quiet --infected --log=${LOG}
- 
+
+clamscan -r / --quiet --infected --log=${LOG}
+
 check_scan

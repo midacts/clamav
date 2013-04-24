@@ -47,9 +47,7 @@ class clamav {
   # because freshclam is managed and maintained by the Puppet Master
   service { "${clamav::params::freshclam_srv}":
     ensure      => false,
-    enable      => false,
-    hasrestart  => true,
-    hasstatus   => true,
+    enable      => false, 
     subscribe	=> File["${clamav::params::clamd_file}"]
   }
 
