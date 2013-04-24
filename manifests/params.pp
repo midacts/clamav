@@ -53,6 +53,9 @@ class clamav::params {
       $freshclam_srv	= 'clamav-freshclam'
       $user		= 'clam'
       $group		= 'clam'
+      file { '/etc/cron.daily/freshclam':
+        ensure		=> absent,
+      }
     }
     debian, ubuntu:     {
       $clamav_package	= 'clamav'
