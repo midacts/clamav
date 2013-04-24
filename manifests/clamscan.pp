@@ -45,7 +45,7 @@ class clamav::clamscan {
   # Creates the shell script for the cron job to execute
   file { '/var/log/clamav/clamscan.sh':
     ensure	=> file,
-    content	=> template('clamav/clamscan.erb'),
+    content	=> template('clamav/clamscan.sh.erb'),
     mode	=> '777',
     owner       => "${clamav::params::user}",
     group       => "${clamav::params::group}",
