@@ -111,7 +111,7 @@ This template sets the default ssmtp.conf file answers on every server. It speci
 parameters
 
 * **mailhub=<%= clamav::params::mailserver %>** 
-* **hostname=<%= hostname %>** to automatically generate a the unique server hostname for every server's ssmtp.conf
+* **hostname=<%= fqdn %>** to automatically generate a the unique server hostname for every server's ssmtp.conf
 
 ##`clamscan.sh.erb`
 This file was found on 'Devon Hillard's Digital Sanctuary' which can be found at 
