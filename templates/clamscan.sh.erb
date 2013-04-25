@@ -23,6 +23,6 @@ check_scan () {
   fi
 }
 
-clamscan -r / --quiet --infected --log=${LOG}
+clamscan -r / --exclude-dir=/sys/ --quiet --infected --log=${LOG}
 
 check_scan
