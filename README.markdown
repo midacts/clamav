@@ -121,3 +121,10 @@ I used his code that he made to be used for daily clamscan runs. This script run
 infected files. It then will email the supplied email addresses of any found infected files. I made this file template
 so that i could auto generate the 'fqdn' for the SUBJECT variable. I also used my 'clamscan_log' variable for the LOG 
 variable. The EMAIL variable is set by the clamav::params::email variable. Lastly, I changed 'clamscan' to scan '-r /'.
+
+
+
+
+
+# NOTE #
+Open Source Puppet users need only to alter the 'Database files' found in the 'clamav:params' file.
