@@ -52,7 +52,7 @@ class clamav {
   }
 
   # Calls the corresponding classes whether it is the Puppet Master or Agent
-  if $fact_is_puppetmaster == 'true' {
+  if $hostname == 'puppet' {
     include clamav::freshclam
     include clamav::clamscan
   }
