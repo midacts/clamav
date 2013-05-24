@@ -26,6 +26,8 @@
 class clamav::params {
   
   # Database file variables
+  # Opensource Puppet must edit the $daily_file and $main_file to the
+  # '/etc/puppet/modules/clamav/files/...' directory
   $daily_file		= '/etc/puppetlabs/puppet/modules/clamav/files/daily.cvd'
   $main_file		= '/etc/puppetlabs/puppet/modules/clamav/files/main.cvd'
 
