@@ -127,4 +127,7 @@ variable. The EMAIL variable is set by the clamav::params::email variable. Lastl
 
 
 # NOTE #
-Open Source Puppet users need only to alter the 'Database files' found in the 'clamav:params' file.
+1. Open Source Puppet users need only to alter the 'Database files' found in the 'clamav:params' file.
+2. If your Puppet Master's hostname is something other than 'puppet' please change line 55 of clamav/manifests/init.pp
+   from 'puppet' to the hostname of your server. I have not had alot of luck with facter always having the 
+   'fact_is_puppetmaster' fact.
