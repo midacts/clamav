@@ -8,7 +8,7 @@
 # ---------
 # This is the config file for SSMTP to use the correct mail server
 # mailserver=obmail100.orthobanc.local (172.16.3.30) and hostname
-# hostname=<%= hostname %> on all Puppet Agents and Master.
+# hostname=<%= @hostname %> on all Puppet Agents and Master.
 #
 # Class
 # ------
@@ -32,7 +32,7 @@ mailhub=<%= scope.lookupvar('clamav::params::mailserver') %>
 #rewriteDomain=
 
 # The full hostname
-hostname=<%= fqdn %>
+hostname=<%= @fqdn %>
 
 # Are users allowed to set their own From: address?
 # YES - Allow the user to specify their own From: address
