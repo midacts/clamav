@@ -11,7 +11,7 @@
 #
 # Author
 # --------
-# John McCarthy <jmccarthy@orthobanc.com>
+# John McCarthy <midactsmystery@gmail.com>
 #
 #
 class clamav {
