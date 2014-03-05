@@ -35,7 +35,7 @@ class clamav::params {
   $mailserver		= '192.168.1.1'
 
   # clamscan.sh.erb EMAIL variable 
-  $email		= 'jmccarthy@orthobanc.com'
+  $email		= 'username@example.com'
 
   # Date used for the clamscan.log variable
   $date                 = inline_template("<%= Time.now.strftime('%m%d%Y') %>")
