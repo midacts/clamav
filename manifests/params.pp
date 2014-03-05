@@ -32,7 +32,7 @@ class clamav::params {
   $main_file		= '/etc/puppetlabs/puppet/modules/clamav/files/main.cvd'
 
   # ssmtp.conf Variable for mailhub 
-  $mailserver		= '172.16.3.30'
+  $mailserver		= '192.168.1.1'
 
   # clamscan.sh.erb EMAIL variable 
   $email		= 'jmccarthy@orthobanc.com'
