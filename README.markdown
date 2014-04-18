@@ -3,7 +3,7 @@ CLAMAV
 
 Puppet module to implement and maintain clamav on Linux servers. This module has been tested on:
     
-    Debian 6
+    Debian 6 and 7
     Ubuntu 12.04
     CentOS 5 and 6
     
