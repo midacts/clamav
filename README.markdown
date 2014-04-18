@@ -43,6 +43,8 @@ latest database files from the "puppet:///modules/clamav" directory and copy the
 ##`params.pp`
 This file is used to store all the variables for all the other classes.
 
+**In the params.pp file, be sure to change the $daily_file and $main_file to match your environments puppet module location.**
+
 ##`freshclam.pp`
 This file is used to enable the 'freshclam' service for the Puppet Master. It then runs freshclam hourly to search for
 the latest database files. If new database files are found, they are downloaded to the Puppet Master's database directory
