@@ -45,6 +45,9 @@ This file is used to store all the variables for all the other classes.
 
 **In the params.pp file, be sure to change the $daily_file and $main_file to match your environments puppet module location.**
 
+The following site helps to explain how to use sendmail to send clamav detected virus emails using gmail as your SMTP server:
+http://linuxconfig.org/configuring-gmail-as-sendmail-email-relay
+
 ##`freshclam.pp`
 This file is used to enable the 'freshclam' service for the Puppet Master. It then runs freshclam hourly to search for
 the latest database files. If new database files are found, they are downloaded to the Puppet Master's database directory
